@@ -22,9 +22,9 @@ The distance matrix shows that:
 
 The Jaccard similarity was computed using k-mers (with `k=21`). For each pair of samples, k-mers were generated, and the Jaccard similarity was calculated based on the intersection and union of these k-mers. The similarity was then converted into a distance using the formula:
 
-\[
-\text{Distance} = 1 - \text{Jaccard Similarity}
-\]
+
+Distance = 1 - Jaccard Similarity
+
 
 The matrix above represents these distances.
 
