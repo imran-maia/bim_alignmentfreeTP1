@@ -19,8 +19,6 @@ def stream_kmers(text, k):
     :param int k: The length of each k-mer
     :return: A generator yielding k-mer strings
     """
-    if len(text) < k:
-        return  # If the sequence is shorter than k, return nothing
 
     # Convert first k-mer into an integer representation
     val = 0
@@ -41,7 +39,8 @@ def stream_kmers(text, k):
 
     # Sliding window over the rest of the sequence
     for i in range(k, len(text)):
-        val = (val << 2) & ((1 << (2 * k)) - 1)  # Shift left and keep last k-mer bits
+        # Shift left and keep last k-mer bits
+        val = (val << 2) & ((1 << (2 * k)) - 1)  
         if text[i] == 'A':
             val |= 0
         elif text[i] == 'C':
