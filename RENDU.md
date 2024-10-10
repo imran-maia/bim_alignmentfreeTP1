@@ -1,14 +1,13 @@
 # TP Report
-
 ## Distance Matrix of Jaccard Indices
 
-|               | GCA_000013265.1 | GCA_000008865.2 | GCA_000069965.1 | GCA_030271835.1 | GCA_000005845.2 |
-|---------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| **GCA_000013265.1** | 0.0               | 0.3048            | 0.0008            | 0.0008            | 0.3360          |
-| **GCA_000008865.2** | 0.3048            | 0.0               | 0.0008            | 0.0008            | 0.4460          |
-| **GCA_000069965.1** | 0.0008            | 0.0008            | 0.0               | 0.0262            | 0.0009          |
-| **GCA_030271835.1** | 0.0008            | 0.0008            | 0.0262            | 0.0               | 0.0009          |
-| **GCA_000005845.2** | 0.3360            | 0.4460            | 0.0009            | 0.0009            | 0.0             |
+|                 | **(1) GCA_000013265.1** | **(2) GCA_000005845.2** | **(3) GCA_000069965.1** | **(4) GCA_000008865.2** | **(5) GCA_030271835.1** |
+|:---------------:|:-----------------------:|:-----------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
+| **(1) GCA_000013265.1** | **1.0000**              | **0.3360**              | **0.0008**              | **0.3048**              | **0.0008**              |
+| **(2) GCA_000005845.2** | **0.3360**              | **1.0000**              | **0.0009**              | **0.4460**              | **0.0009**              |
+| **(3) GCA_000069965.1** | **0.0008**              | **0.0009**              | **1.0000**              | **0.0008**              | **0.0262**              |
+| **(4) GCA_000008865.2** | **0.3048**              | **0.4460**              | **0.0008**              | **1.0000**              | **0.0008**              |
+| **(5) GCA_030271835.1** | **0.0008**              | **0.0009**              | **0.0262**              | **0.0008**              | **1.0000**              |
 
 ## Comment on Matrix
 
@@ -20,12 +19,7 @@ The distance matrix shows that:
 
 ## Description of Methods
 
-The Jaccard similarity was computed using k-mers (with `k=21`). For each pair of samples, k-mers were generated, and the Jaccard similarity was calculated based on the intersection and union of these k-mers. The similarity was then converted into a distance using the formula:
+The Jaccard similarity was computed using k-mers (with `k=21`). For each pair of samples, k-mers were generated, and the Jaccard similarity was calculated based on the intersection and union of these k-mers. 
 
-
-Distance = 1 - Jaccard Similarity
-
-
-The matrix above represents these distances.
 
 Md Imran Hossain
