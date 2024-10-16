@@ -20,17 +20,19 @@
 | **(4) GCA_000008865.2** | 0.2884                  | 0.3864                  | 0.0017                  | **1.0000**              | 0.0018                  |
 | **(5) GCA_030271835.1** | 0.0021                  | 0.0029                  | 0.0300                  | 0.0018                  | **1.0000**              |
 
-## Comment on Matrices
+## Observations
 
-- The original matrix shows varying levels of similarity. For instance, **GCA_000013265.1** and **GCA_000008865.2** have a moderate similarity with a Jaccard index of **0.3071**, while **GCA_000069965.1** and **GCA_030271835.1** have a Jaccard index of **0.0311**, indicating some degree of relatedness.
-- Using sketches, the Jaccard indices are slightly lower in some cases, such as between **GCA_000008865.2** and **GCA_000005845.2** (from **0.4365** to **0.3864**), reflecting the approximate nature of sketch-based computations.
-- Pairs like **GCA_000069965.1** and **GCA_000008865.2** show very low similarity in both approaches, indicating almost no shared k-mers.
+The results show varying levels of genetic similarity between the samples. For example, **GCA_000013265.1** and **GCA_000008865.2** exhibit moderate similarity with a Jaccard index of 0.3071, suggesting they may share some conserved genetic regions, possibly due to evolutionary relationships. In contrast, pairs such as **GCA_000008865.2** and **GCA_000069965.1** have very low similarity (0.0023), indicating significant genetic divergence, likely reflecting distant evolutionary backgrounds or substantial genome structural differences.
+
+The relatively high distance observed between **GCA_000008865.2** and **GCA_000005845.2** (0.4365) suggests substantial genetic variation, which could be due to different evolutionary adaptations or genome content. The choice of k-mers (`k = 21`) helps to capture specific conserved regions, as longer k-mers reduce the chances of random matches and highlight more significant similarities.
+
+Using sketches (`s = 10,000`) provides an efficient approximation of Jaccard similarity, enabling scalable analysis of large genomic datasets with slight deviations from exact calculations. This approach allows for faster comparisons while still maintaining a reasonable level of accuracy in estimating genetic relationships.
 
 ## Description of Methods
 
 The Jaccard similarity was computed using k-mers (`k = 21`). Each sequence from the `.fasta` files was processed to generate k-mers. Two methods were used:
 1. **Exact Method**: The Jaccard similarity was calculated based on the intersection and union of all k-mers.
-2. **Sketching Method**: The sequences were represented using sketches (`s = 10,000`) to reduce memory usage and computational cost. The approximate Jaccard similarity was then computed based on these sketches.
+2. **Sketching Method**: The sequences were represented using sketches (`s = 10,000`) to reduce memory usage and computational cost. The approximate Jaccard similarity was then computed based on these sketches. This approach provides a balance between computational efficiency and the accuracy of similarity estimation.
 
 
 by Md Imran Hossain
